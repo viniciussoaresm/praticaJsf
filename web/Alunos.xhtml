@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Cadastro</title>
+    </h:head>
+    <h:body>
+        <a href="index.xhtml">Incio</a>
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputLabel value="Nome:"/>
+                <h:inputText id="nome" value="#{alunosBean.nome}"  size="20" requiredMessage="Nome" />
+                <h:message for=" "></h:message>
+
+                <h:outputLabel value="Endereçoo:"/>
+                <h:inputText id="end" value="#{alunosBean.endereco}" size="20" requiredMessage="Endereco" />
+                <h:message for=" "></h:message>
+
+                <h:outputLabel value="Número:"/>
+                <h:inputText id="nro" value="#{alunosBean.numero}"  size="20" requiredMessage="Numero" />             
+                <h:message for=" "></h:message>
+
+                <h:outputLabel value="Telefone:"/>
+                <h:inputText id="tel" value="#{alunosBean.telefone}" size="20" requiredMessage="Telefone" />         
+                <h:message for=" "></h:message>
+
+                <h:outputLabel value="Cidade:"/>
+                <h:inputText id="mun" value="#{alunosBean.cidade}" size="20" requiredMessage="Cidade" />    
+                <h:message for=" "></h:message>
+
+                <h:commandButton id="btnE" action="#{alunosBean.cadastraAluno()}" value="Enviar" />
+                <h:commandButton id="btnL" action="#{alunosBean.limparAluno()}" value="Limpar" />
+
+            </h:panelGrid>
+        </h:form>
+        <h:outputText value="#{alunosBean.resultado}"></h:outputText>
+
+        <table width="300px" border="1px" bordercolor="#FF0000">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Endereco</th>
+                    <th>Cidade</th>
+                    <th>Numero</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><h:outputText value="#{alunosBean.nome}"/></td>
+                    <td><h:outputText value="#{alunosBean.telefone}"/></td>
+                    <td><h:outputText value="#{alunosBean.endereco}"/></td>
+                    <td><h:outputText value="#{alunosBean.cidade}"/></td>
+                    <td><h:outputText value="#{alunosBean.numero}"/></td>
+                </tr>                
+            </tbody>
+        </table>
+    </h:body>
+</html>

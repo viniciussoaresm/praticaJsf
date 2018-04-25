@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Cadastro</title>
+    </h:head>
+    <h:body>
+        <a href="index.xhtml">Incio</a>
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputLabel value="Peso"/>
+                <h:inputText id="nome" value="#{iMCBean.peso}"  size="20" requiredMessage="Nome" />
+                <h:message for=" "></h:message>
+
+                <h:outputLabel value="Altura"/>
+                <h:inputText id="end" value="#{iMCBean.altura}" size="20" requiredMessage="Endereco" />
+                <h:message for=" "></h:message>            
+
+                <h:commandButton id="btnE" action="#{iMCBean.calcular()}" value="Calcular" />
+                <h:commandButton id="btnL" action="#{iMCBean.limpar()}" value="Limpar" />
+
+            </h:panelGrid>
+        </h:form>
+        <h:outputText value="#{iMCBean.IMC}"></h:outputText>     
+    </h:body>
+</html>
